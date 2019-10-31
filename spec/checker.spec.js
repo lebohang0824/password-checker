@@ -3,7 +3,7 @@ const { passwordIsValid, passwordIsOk } = require('../src/checker.js');
 
 describe('Password is valid', function () {
 
-	let password = passwordIsValid();
+	let password = '2019Giants!';
 
 	it('Should exist', function () {
 		expect(password).not.toBeNull();
@@ -26,21 +26,23 @@ describe('Password is valid', function () {
 	});
 	
 	it('Should have at least one special character', function () {
-		expect(password).toMatch(/[{_^%@!%&*"']/);
+		expect(password).toMatch(/[!@#$%^&*()_{}+'"]/);
 	});
 });
 
 describe('Password is ok', function () {
 
+	let password = '2019Giants!';
+
 	it('Should exist', function () {
-		expect(passwordIsOk()).not.toBeNull();
+		expect(password).not.toBeNull();
 	});
 
 	it('Should be longer than than 8 characters', function () {
-		expect(passwordIsOk().split(' ').join('').length).toBeGreaterThan(8);
+		expect(password.split(' ').join('').length).toBeGreaterThan(8);
 	});
 	
 	it('Should at least have one digit', function () {
-		expect(passwordIsOk()).toMatch(/[0-9]/);
+		expect(password).toMatch(/[0-9]/);
 	});
 });
