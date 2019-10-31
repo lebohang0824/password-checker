@@ -1,0 +1,11 @@
+{
+  "name": "password-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "checker.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "",
+  "license": "ISC"
+}
