@@ -29,19 +29,13 @@ function passwordIsOk() {
 
 	let name = "2019Giants!";
 
-	try {
+	if (name == '') return false;
 
-		if (name == '') throw('Should exist');
+	if (name.length <= 8) return false;
 
-		if (name.length <= 8) throw('Should be longer than than 8 characters');
+	if (name.match(/[0-9]/g) == null) return false;
 
-		if (name.match(/[0-9]/g) == null) throw('Should at least have one digit');
-
-	} catch(err) {
-
-		console.log(err);
-
-	}	W
+	return true;
 
 }
 
