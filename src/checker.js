@@ -27,15 +27,16 @@ function passwordIsValid() {
 
 function passwordIsOk() {
 
-	let name = "2019Giants!";
+	let results = true;
+	let name    = "2019Giants!";
 
-	if (name == '') return false;
+	if (name == '') results = false;
 
-	if (name.length <= 8) return false;
+	if (name.length <= 8) results = false;
 
-	if (name.match(/[0-9]/g) == null) return false;
+	if (name.match(/[0-9]/g) == null) results = false;
 
-	return true;
+	return results;
 
 }
 
