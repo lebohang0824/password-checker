@@ -1,21 +1,21 @@
 
 function passwordIsValid() {
 
-	let name = "2019Giants!";
+	let password = "2019Giants!";
 
 	try {
 
-		if (name == '') throw('Should exist');
+		if (password == '') throw('Should exist');
 
-		if (name.length <= 8) throw('Should be longer than than 8 characters');
+		if (password.length <= 8) throw('Should be longer than than 8 characters');
 
-		if (name.match(/[a-z]/g) == null) throw('Should have at least one lowercase letter');
+		if (password.match(/[a-z]/g) == null) throw('Should have at least one lowercase letter');
 
-		if (name.match(/[A-Z]/g) == null) throw('Should have at least one uppercase letter');
+		if (password.match(/[A-Z]/g) == null) throw('Should have at least one uppercase letter');
 
-		if (name.match(/[0-9]/g) == null) throw('Should at least have one digit');
+		if (password.match(/[0-9]/g) == null) throw('Should at least have one digit');
 
-		if (name.match(/[!@#$%^&*()_{}+'"]/g) == null) throw('Should have at least one special character');	
+		if (password.match(/[!@#$%^&*()_{}+'"]/g) == null) throw('Should have at least one special character');	
 
 	} catch(err) {
 
@@ -27,16 +27,15 @@ function passwordIsValid() {
 
 function passwordIsOk() {
 
-	let results = true;
-	let name    = "2019Giants!";
+	let password = "2019Giants!";
 
-	if (name == '') results = false;
+	if (password !== '' && password.length > 8) {
+		if (password.match(/[a-z]/g) !== null || password.match(/[A-Z]/g) !== null || password.match(/[0-9]/g) !== null || password.match(/[!@#$%^&*()_{}+'"]/g) !== null) {
+			return true;
+		}
+	}
 
-	if (name.length <= 8) results = false;
-
-	if (name.match(/[0-9]/g) == null) results = false;
-
-	return results;
+	return false;
 
 }
 
