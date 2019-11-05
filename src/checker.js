@@ -40,4 +40,4 @@ function passwordIsOk() {
 }
 
 passwordIsValid();
-passwordIsOk();
+console.log(passwordIsOk());
