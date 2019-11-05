@@ -39,4 +39,5 @@ function passwordIsOk() {
 
 }
 
-module.exports = {passwordIsValid, passwordIsOk};
+passwordIsValid();
+passwordIsOk();
