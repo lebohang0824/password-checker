@@ -1,7 +1,5 @@
 
-function passwordIsValid() {
-
-	let password = "2019Giants!";
+function passwordIsValid(password) {
 
 	try {
 
@@ -25,9 +23,7 @@ function passwordIsValid() {
 
 }
 
-function passwordIsOk() {
-
-	let password = "2019Giants!";
+function passwordIsOk(password) {
 
 	if (password !== '' && password.length > 8) {
 		if (password.match(/[a-z]/g) !== null || password.match(/[A-Z]/g) !== null || password.match(/[0-9]/g) !== null || password.match(/[!@#$%^&*()_{}+'"]/g) !== null) {
@@ -39,5 +35,10 @@ function passwordIsOk() {
 
 }
 
-passwordIsValid();
-console.log(passwordIsOk());
+passwordIsValid('2019Giants!');
+console.log(passwordIsOk('2019Giants!'));
+
+module.exports = {
+	passwordIsValid,
+	passwordIsOk
+}
